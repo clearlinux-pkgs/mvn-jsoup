@@ -4,17 +4,20 @@
 #
 Name     : mvn-jsoup
 Version  : 1.10.2
-Release  : 1
+Release  : 2
 URL      : https://repo1.maven.org/maven2/org/jsoup/jsoup/1.10.2/jsoup-1.10.2.jar
 Source0  : https://repo1.maven.org/maven2/org/jsoup/jsoup/1.10.2/jsoup-1.10.2.jar
 Source1  : https://repo1.maven.org/maven2/org/jsoup/jsoup/1.10.2/jsoup-1.10.2.pom
-Source2  : https://repo1.maven.org/maven2/org/jsoup/jsoup/1.7.2/jsoup-1.7.2.jar
-Source3  : https://repo1.maven.org/maven2/org/jsoup/jsoup/1.7.2/jsoup-1.7.2.pom
-Source4  : https://repo1.maven.org/maven2/org/jsoup/jsoup/1.8.3/jsoup-1.8.3.pom
+Source2  : https://repo1.maven.org/maven2/org/jsoup/jsoup/1.6.3/jsoup-1.6.3.jar
+Source3  : https://repo1.maven.org/maven2/org/jsoup/jsoup/1.6.3/jsoup-1.6.3.pom
+Source4  : https://repo1.maven.org/maven2/org/jsoup/jsoup/1.7.2/jsoup-1.7.2.jar
+Source5  : https://repo1.maven.org/maven2/org/jsoup/jsoup/1.7.2/jsoup-1.7.2.pom
+Source6  : https://repo1.maven.org/maven2/org/jsoup/jsoup/1.8.3/jsoup-1.8.3.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : MIT
 Requires: mvn-jsoup-data = %{version}-%{release}
+Requires: mvn-jsoup-license = %{version}-%{release}
 
 %description
 jsoup: Java HTML parser that makes sense of real-world HTML soup.
@@ -28,25 +31,42 @@ Group: Data
 data components for the mvn-jsoup package.
 
 
+%package license
+Summary: license components for the mvn-jsoup package.
+Group: Default
+
+%description license
+license components for the mvn-jsoup package.
+
+
 %prep
+%setup -q -n META-INF
 
 %build
 
 %install
+mkdir -p %{buildroot}/usr/share/package-licenses/mvn-jsoup
+cp LICENSE %{buildroot}/usr/share/package-licenses/mvn-jsoup/LICENSE
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.10.2
-cp %{SOURCE0} %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.10.2
+cp %{SOURCE0} %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.10.2/jsoup-1.10.2.jar
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.10.2
-cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.10.2
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.10.2/jsoup-1.10.2.pom
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.6.3
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.6.3/jsoup-1.6.3.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.6.3
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.6.3/jsoup-1.6.3.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.7.2
-cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.7.2
+cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.7.2/jsoup-1.7.2.jar
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.7.2
-cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.7.2
+cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.7.2/jsoup-1.7.2.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.8.3
-cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.8.3
+cp %{SOURCE6} %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.8.3/jsoup-1.8.3.pom
 
 
 %files
@@ -56,6 +76,12 @@ cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.8.3
 %defattr(-,root,root,-)
 /usr/share/java/.m2/repository/org/jsoup/jsoup/1.10.2/jsoup-1.10.2.jar
 /usr/share/java/.m2/repository/org/jsoup/jsoup/1.10.2/jsoup-1.10.2.pom
+/usr/share/java/.m2/repository/org/jsoup/jsoup/1.6.3/jsoup-1.6.3.jar
+/usr/share/java/.m2/repository/org/jsoup/jsoup/1.6.3/jsoup-1.6.3.pom
 /usr/share/java/.m2/repository/org/jsoup/jsoup/1.7.2/jsoup-1.7.2.jar
 /usr/share/java/.m2/repository/org/jsoup/jsoup/1.7.2/jsoup-1.7.2.pom
 /usr/share/java/.m2/repository/org/jsoup/jsoup/1.8.3/jsoup-1.8.3.pom
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/mvn-jsoup/LICENSE
