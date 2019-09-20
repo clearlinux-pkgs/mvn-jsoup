@@ -4,18 +4,20 @@
 #
 Name     : mvn-jsoup
 Version  : 1.10.2
-Release  : 4
+Release  : 5
 URL      : https://repo1.maven.org/maven2/org/jsoup/jsoup/1.10.2/jsoup-1.10.2.jar
 Source0  : https://repo1.maven.org/maven2/org/jsoup/jsoup/1.10.2/jsoup-1.10.2.jar
 Source1  : https://repo1.maven.org/maven2/org/jsoup/jsoup/1.10.2/jsoup-1.10.2.pom
 Source2  : https://repo1.maven.org/maven2/org/jsoup/jsoup/1.11.2/jsoup-1.11.2.jar
 Source3  : https://repo1.maven.org/maven2/org/jsoup/jsoup/1.11.2/jsoup-1.11.2.pom
-Source4  : https://repo1.maven.org/maven2/org/jsoup/jsoup/1.6.3/jsoup-1.6.3.jar
-Source5  : https://repo1.maven.org/maven2/org/jsoup/jsoup/1.6.3/jsoup-1.6.3.pom
-Source6  : https://repo1.maven.org/maven2/org/jsoup/jsoup/1.7.2/jsoup-1.7.2.jar
-Source7  : https://repo1.maven.org/maven2/org/jsoup/jsoup/1.7.2/jsoup-1.7.2.pom
-Source8  : https://repo1.maven.org/maven2/org/jsoup/jsoup/1.8.3/jsoup-1.8.3.jar
-Source9  : https://repo1.maven.org/maven2/org/jsoup/jsoup/1.8.3/jsoup-1.8.3.pom
+Source4  : https://repo1.maven.org/maven2/org/jsoup/jsoup/1.11.3/jsoup-1.11.3.jar
+Source5  : https://repo1.maven.org/maven2/org/jsoup/jsoup/1.11.3/jsoup-1.11.3.pom
+Source6  : https://repo1.maven.org/maven2/org/jsoup/jsoup/1.6.3/jsoup-1.6.3.jar
+Source7  : https://repo1.maven.org/maven2/org/jsoup/jsoup/1.6.3/jsoup-1.6.3.pom
+Source8  : https://repo1.maven.org/maven2/org/jsoup/jsoup/1.7.2/jsoup-1.7.2.jar
+Source9  : https://repo1.maven.org/maven2/org/jsoup/jsoup/1.7.2/jsoup-1.7.2.pom
+Source10  : https://repo1.maven.org/maven2/org/jsoup/jsoup/1.8.3/jsoup-1.8.3.jar
+Source11  : https://repo1.maven.org/maven2/org/jsoup/jsoup/1.8.3/jsoup-1.8.3.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : MIT
@@ -64,23 +66,29 @@ cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.11.2/
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.11.2
 cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.11.2/jsoup-1.11.2.pom
 
-mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.6.3
-cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.6.3/jsoup-1.6.3.jar
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.11.3
+cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.11.3/jsoup-1.11.3.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.11.3
+cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.11.3/jsoup-1.11.3.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.6.3
-cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.6.3/jsoup-1.6.3.pom
+cp %{SOURCE6} %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.6.3/jsoup-1.6.3.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.6.3
+cp %{SOURCE7} %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.6.3/jsoup-1.6.3.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.7.2
-cp %{SOURCE6} %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.7.2/jsoup-1.7.2.jar
+cp %{SOURCE8} %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.7.2/jsoup-1.7.2.jar
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.7.2
-cp %{SOURCE7} %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.7.2/jsoup-1.7.2.pom
+cp %{SOURCE9} %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.7.2/jsoup-1.7.2.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.8.3
-cp %{SOURCE8} %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.8.3/jsoup-1.8.3.jar
+cp %{SOURCE10} %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.8.3/jsoup-1.8.3.jar
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.8.3
-cp %{SOURCE9} %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.8.3/jsoup-1.8.3.pom
+cp %{SOURCE11} %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.8.3/jsoup-1.8.3.pom
 
 
 %files
@@ -92,6 +100,8 @@ cp %{SOURCE9} %{buildroot}/usr/share/java/.m2/repository/org/jsoup/jsoup/1.8.3/j
 /usr/share/java/.m2/repository/org/jsoup/jsoup/1.10.2/jsoup-1.10.2.pom
 /usr/share/java/.m2/repository/org/jsoup/jsoup/1.11.2/jsoup-1.11.2.jar
 /usr/share/java/.m2/repository/org/jsoup/jsoup/1.11.2/jsoup-1.11.2.pom
+/usr/share/java/.m2/repository/org/jsoup/jsoup/1.11.3/jsoup-1.11.3.jar
+/usr/share/java/.m2/repository/org/jsoup/jsoup/1.11.3/jsoup-1.11.3.pom
 /usr/share/java/.m2/repository/org/jsoup/jsoup/1.6.3/jsoup-1.6.3.jar
 /usr/share/java/.m2/repository/org/jsoup/jsoup/1.6.3/jsoup-1.6.3.pom
 /usr/share/java/.m2/repository/org/jsoup/jsoup/1.7.2/jsoup-1.7.2.jar
